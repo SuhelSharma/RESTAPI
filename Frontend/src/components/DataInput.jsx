@@ -23,7 +23,7 @@ const DataInput = ({ setData, setRollNo }) => {
         data: parsedData.data,
       };
 
-      const response = await axios.post("http://localhost:5000/", requestData);
+      const response = await axios.post("https://restapi-lwbo.onrender.com/", requestData);
       setData(response.data);
       setError("");
       setResponseMessage("✅ Data saved successfully!");
