@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/fetch-latest");
+        const response = await axios.get("https://restapi-lwbo.onrender.com/");
         setData(response.data || {});
       } catch (error) {
         console.error("❌ Error fetching stored data:", error);
@@ -35,7 +35,7 @@ const App = () => {
   // Function to handle submission from DataInput component
   const handleSubmit = async (submittedData) => {
     try {
-      await axios.post("http://localhost:5000/store-data", submittedData);
+      await axios.post("https://restapi-lwbo.onrender.com/", submittedData);
       console.log("✅ Data stored successfully!");
 
       if (submittedData.rollNo) {
